@@ -12,21 +12,14 @@ v install etienne-napoleone.chalk
 
 ## Usage
 
-Chalk offers three functions:
-- `chalk.fg(text string, color string)` - To change the foreground color.
-- `chalk.bg(text string, color string)` - To change the background color.
-- `chalk.style(text string, style string)` - To change the text style.
-
-Example:
-
-```python
+```js
 import chalk
 
-# basic usage
-println('I am really ' + chalk.fg('happy', 'green'))
+// basic usage
+println('I am really ' + chalk.draw('happy').fg('green').str())
 
-# you can also nest them
-println('I am really ' + chalk.fg(chalk.style('ANGRY', 'bold'), 'red'))
+// you can also chain them
+println('I am really ' + chalk.draw('ANGRY').style('bold').fg('red').str())
 ```
 
 Available colors:

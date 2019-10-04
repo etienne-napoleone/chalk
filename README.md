@@ -26,7 +26,7 @@ import chalk
 println('I am really ' + chalk.fg('happy', 'green'))
 
 # you can also nest them
-println('I am really ' + chalk.fg(chalk.style('ANGRY', 'bold'), 'red') 
+println('I am really ' + chalk.fg(chalk.style('ANGRY', 'bold'), 'red'))
 ```
 
 Available colors:

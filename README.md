@@ -17,6 +17,18 @@ Chalk offers three functions:
 - `chalk.bg(text string, color string)` - To change the background color.
 - `chalk.style(text string, style string)` - To change the text style.
 
+Example:
+
+```python
+import chalk
+
+# basic usage
+println('I am really ' + chalk.fg('happy', 'green'))
+
+# you can also nest them
+println('I am really ' + chalk.fg(chalk.style('ANGRY', 'bold'), 'red') 
+```
+
 Available colors:
 - black
 - red
@@ -43,15 +55,3 @@ Available styles:
 - blink
 - reverse
 - hidden
-
-Examples:
-
-```python
-import chalk
-
-# basic usage
-println('I am really ' + chalk.fg('happy', 'green'))
-
-# you can also nest them
-println('I am really ' + chalk.fg(chalk.style('ANGRY', 'bold'), 'red') 
-```

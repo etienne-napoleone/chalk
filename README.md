@@ -7,7 +7,7 @@ A terminal string colorizer for the [V language](https://vlang.io).
 
 With vpm:
 ```
-v install etiennenapoleone.chalk
+v install etienne-napoleone.chalk
 ```
 
 ## Usage

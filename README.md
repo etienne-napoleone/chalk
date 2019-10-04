@@ -39,7 +39,7 @@ Available colors:
 Available styles:
 - bold
 - dim
-- undelined
+- underline
 - blink
 - reverse
 - hidden

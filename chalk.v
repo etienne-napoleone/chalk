@@ -1,9 +1,9 @@
 module chalk
 
 const (
-    Prefix = '\e['
-    Suffix = 'm'
-    Foreground_colors = {
+    prefix = '\e['
+    suffix = 'm'
+    foreground_colors = {
         'black': 30
         'red': 31
         'green': 32
@@ -22,7 +22,7 @@ const (
         'light_cyan': 96
         'white': 97
     }
-    Background_colors = {
+    background_colors = {
         'black': 40
         'red': 41
         'green': 42
@@ -41,7 +41,7 @@ const (
         'light_cyan': 106
         'white': 107
     }
-    Style = {
+    style = {
         'bold': 1
         'dim': 2
         'underline': 4
@@ -49,19 +49,19 @@ const (
         'reverse': 7
         'hidden': 8
     }
-    Reset = '${Prefix}0${Suffix}'
+    reset = '${prefix}0${suffix}'
 )
 
 
 pub fn fg(text string, color string) string {
-    return '$Prefix${Foreground_colors[color]}$Suffix$text$Reset'
+    return '$prefix${foreground_colors[color]}$suffix$text$reset'
 }
 
 
 pub fn bg(text string, color string) string {
-    return '$Prefix${Background_colors[color]}$Suffix$text$Reset'
+    return '$prefix${background_colors[color]}$suffix$text$reset'
 }
 
 pub fn style(text string, color string) string {
-    return '$Prefix${Style[color]}$Suffix$text$Reset'
+    return '$prefix${style[color]}$suffix$text$reset'
 }

@@ -7,7 +7,7 @@ A terminal string colorizer for the [V language](https://vlang.io).
 
 With vpm:
 ```
-v install etienne-napoleone.chalk
+v install etienne_napoleone.chalk
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Chalk offers three functions:
 
 Example:
 
-```python
+```v
 import chalk
 
 # basic usage

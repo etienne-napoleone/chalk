@@ -1,5 +1,7 @@
 module chalk
 
+import strconv
+
 const (
     prefix = '\e['
     suffix = 'm'
@@ -49,6 +51,8 @@ const (
         'reverse': 7
         'hidden': 8
     }
+	fg_rgb = 38
+	bg_rgb = 48
     reset = '${prefix}0${suffix}'
 )
 
@@ -57,9 +61,30 @@ pub fn fg(text string, color string) string {
     return '$prefix${foreground_colors[color]}$suffix$text$reset'
 }
 
+pub fn fg_rgb(text string, r int, g int, b int) string {
+	return '$prefix$fg_rgb;2;$r;$g;${b}$suffix$text$reset'
+}
+
+pub fn fg_hex(text string, hex string) string {
+	r := strconv.common_parse_int(hex[1..3], 16, 16, true, false) or { 0 }
+    g := strconv.common_parse_int(hex[3..5], 16, 16, true, false) or { 0 }
+    b := strconv.common_parse_int(hex[5..7], 16, 16, true, false) or { 0 }
+    return fg_rgb(text, int(r), int(g), int(b))
+}
 
 pub fn bg(text string, color string) string {
     return '$prefix${background_colors[color]}$suffix$text$reset'
+}
+
+pub fn bg_rgb(text string, r int, g int, b int) string {
+	return '$prefix$bg_rgb;2;$r;$g;${b}$suffix$text$reset'
+}
+
+pub fn bg_hex(text string, hex string) string {
+	r := strconv.common_parse_int(hex[1..3], 16, 16, true, false) or { 0 }
+    g := strconv.common_parse_int(hex[3..5], 16, 16, true, false) or { 0 }
+    b := strconv.common_parse_int(hex[5..7], 16, 16, true, false) or { 0 }
+    return bg_rgb(text, int(r), int(g), int(b))
 }
 
 pub fn style(text string, color string) string {

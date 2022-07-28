@@ -1,3 +1,7 @@
+> **Warning**
+>
+> This repo is no longer maintained, please check [Mewzax's fork](https://github.com/Mewzax/chalk)
+
 # Chalk
 
 A terminal string colorizer for the [V language](https://vlang.io).

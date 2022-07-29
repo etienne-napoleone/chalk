@@ -5,6 +5,8 @@ A terminal string colorizer for the [V language](https://vlang.io).
 
 ## Installation
 
+> I will try to submit my fork to vpm, and change this to mewzax.chalk
+
 With vpm:
 ```
 v install etienne_napoleone.chalk
@@ -16,6 +18,10 @@ Chalk offers three functions:
 - `chalk.fg(text string, color string)` - To change the foreground color.
 - `chalk.bg(text string, color string)` - To change the background color.
 - `chalk.style(text string, style string)` - To change the text style.
+
+You can also use RGB and HEX values:
+- `chalk.fg_rgb(text string, r int, g int, b int)`
+- `chalk.bg_hex(text string, hex string)`
 
 Example:
 
